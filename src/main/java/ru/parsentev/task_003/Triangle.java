@@ -45,8 +45,6 @@ public class Triangle {
                     (first.y == second.y) && (first.y == third.y) && (second.y == third.y));
 
         if(inLine_x || inLine_y || inPoint) {exit = false;}
-        //if(inLine_y) {exit = false;}
-        //if(inPoint)  {exit = false;}
 
         return exit;
     }

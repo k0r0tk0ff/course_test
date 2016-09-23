@@ -1,10 +1,10 @@
 package ru.parsentev.task_004;
 
-import org.slf4j.Logger;
+//import org.slf4j.Logger;
 import ru.parsentev.task_002.Point;
 import ru.parsentev.task_003.Triangle;
 
-import static org.slf4j.LoggerFactory.getLogger;
+//import static org.slf4j.LoggerFactory.getLogger;
 
 /**
  * TODO: comment
@@ -13,7 +13,7 @@ import static org.slf4j.LoggerFactory.getLogger;
  * @since 28.07.2016
  */
 public class IsoscelesTriangle extends Triangle {
-    private static final Logger log = getLogger(IsoscelesTriangle.class);
+//    private static final Logger log = getLogger(IsoscelesTriangle.class);
 
     public IsoscelesTriangle(Point first, Point second, Point third) {
         super(first, second, third);
@@ -21,6 +21,14 @@ public class IsoscelesTriangle extends Triangle {
 
     @Override
     public boolean exists() {
-       return super.exists();
+        boolean exit = false;
+        double a = first.distanceTo(second);
+        double b = second.distanceTo(third);
+        double c = first.distanceTo(third);
+
+        if(a == b || a == c || c == b) exit = super.exists();
+        return exit;
+
+
     }
 }

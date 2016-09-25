@@ -11,16 +11,14 @@ import java.math.RoundingMode;
 import static java.lang.Math.abs;
 import static java.lang.Math.pow;
 import static java.lang.Math.sqrt;
-import static org.slf4j.LoggerFactory.getLogger;
+//import static org.slf4j.LoggerFactory.getLogger;
 
 /**
- * TODO: comment
- *
  * @author parsentev
  * @since 28.07.2016
  */
 public class RightTriangle extends Triangle {
-    private static final Logger log = getLogger(RightTriangle.class);
+    //private static final Logger log = getLogger(RightTriangle.class);
 
     public RightTriangle(Point first, Point second, Point third) {
         super(first, second, third);
@@ -28,6 +26,15 @@ public class RightTriangle extends Triangle {
 
     @Override
     public boolean exists() {
-        return super.exists();
+        boolean exit = false;
+        double a = Math.abs(first.distanceTo(second));
+        double b = Math.abs(second.distanceTo(third));
+        double c = Math.abs(first.distanceTo(third));
+
+        if(c == Math.sqrt((Math.pow(a, 2.0) + Math.pow(a, 2.0))) ||
+                b == Math.sqrt((Math.pow(c, 2.0) + Math.pow(a, 2.0))) ||
+                     a == Math.sqrt((Math.pow(b, 2.0) + Math.pow(c, 2.0))))
+        { exit = true;}
+        return exit;
     }
 }

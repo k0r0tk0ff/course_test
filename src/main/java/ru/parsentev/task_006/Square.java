@@ -1,19 +1,22 @@
 package ru.parsentev.task_006;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
 import ru.parsentev.task_002.Point;
+import static java.lang.Math.abs;
 
-import static org.slf4j.LoggerFactory.getLogger;
+//import static org.slf4j.LoggerFactory.getLogger;
 
 /**
  * TODO: comment
  *
  * @author parsentev
- * @since 28.07.2016
+ * @author k0r0tk0ff
+ *
+ * @since 25.09.2016
  */
 public class Square {
-    private static final Logger log = getLogger(Square.class);
+    //private static final Logger log = getLogger(Square.class);
 
     private final Point first;
     private final Point second;
@@ -25,9 +28,21 @@ public class Square {
         this.second = second;
         this.third = third;
         this.fourth = fourth;
+
+
     }
 
     public boolean exists() {
-        throw new UnsupportedOperationException();
+
+        boolean exit = false;
+
+        double a = Math.abs(first.distanceTo(second));
+        double b = Math.abs(second.distanceTo(third));
+        double c = Math.abs(first.distanceTo(third));
+        double d = Math.abs(third.distanceTo(fourth));
+
+        if((a == b) && (a == b) && (a == c) && (a == d)) exit = true;
+        return exit;
+
     }
 }

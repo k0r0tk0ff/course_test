@@ -38,10 +38,10 @@ public class Square {
 
         double a = Math.abs(first.distanceTo(second));
         double b = Math.abs(second.distanceTo(third));
-        double c = Math.abs(first.distanceTo(third));
-        double d = Math.abs(third.distanceTo(fourth));
+        double c = Math.abs(fourth.distanceTo(third));
+        double d = Math.abs(first.distanceTo(fourth));
 
-        if((a == b) && (a == b) && (a == c) && (a == d)) exit = true;
+        if((a == b) && (a == c) && (a == d)) exit = true;
         return exit;
 
     }

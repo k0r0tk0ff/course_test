@@ -15,7 +15,7 @@ package ru.parsentev.task_001;
 public class Calculator {
     //private static final Logger log = getLogger(Calculator.class);
 
-    double Result = 0.0;
+    public double Result = 0.0;
 
     public double getResult() {
         return Result;
@@ -49,5 +49,6 @@ public class Calculator {
         }
         Result = expand_value;
     }
+
 }
 
